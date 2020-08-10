@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { bestSellerApi } from './api'
 
 function App() {
+  const [items, setItems] = useState([]);
+
+  const getBestSeller = async () => {
+    try {
+      await bestSellerApi().then(result => {
+        const { data: { item } } = result;
+        // setItems(item);
+        console.log(item)
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  
+  useEffect(() => {
+    getBestSeller();
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
