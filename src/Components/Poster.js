@@ -1,10 +1,28 @@
 import React from 'react';
 
-const Poster = ({ title, author, image, price, priceSales, desc, date, publisher, categoryName, buyLink }) => {
+function Poster({ title, author, image, price, priceSales, desc, date, publisher, categoryName, buyLink, setDetail }) {
+
+  const handleDetail = () => {
+    setDetail({
+      title,
+      author,
+      image,
+      price,
+      priceSales,
+      desc,
+      date,
+      publisher,
+      categoryName,
+      buyLink
+    });
+  }
+
+
   return (
-    <div>
+    <div onClick={() => handleDetail()}>
       <img src={image} alt={title}></img>
       <span>{title}</span>
+      <span>{author}</span>
     </div>
   );
 };

@@ -5,6 +5,13 @@ import HomePresenter from './HomePresenter';
 
 function HomeContainer() {
   const [items, setItems] = useState([]);
+  const [detail, setDetail] = useState({});
+
+  const handleDetail = bookData => {
+    setDetail(bookData);
+  }
+
+  const hasDetail = () => Object.keys(detail).length;
 
   useEffect(() => {
     const getBestSellerItems = async () => {
@@ -16,9 +23,12 @@ function HomeContainer() {
 
   return (
     <>
-      {items && (
+      {items.length && (
         <HomePresenter
           items={items}
+          setDetail={handleDetail}
+          detail={detail}
+          hasDetail={hasDetail}
         />
       )}
     </>
