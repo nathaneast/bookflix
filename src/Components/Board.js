@@ -1,8 +1,12 @@
-import React  from 'react';
+import React from 'react';
 
-export default function Board () {
+const Board = ({ title, children }) => {
   return (
     <section>
+      <span>{title}</span>
+      <div>{children}</div>
     </section>
   );
-}
+};
+
+export default Board;

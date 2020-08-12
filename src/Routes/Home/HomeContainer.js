@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react';
+
 import { bestSellerApi } from '../../api';
+import HomePresenter from './HomePresenter';
 
 function HomeContainer() {
   const [items, setItems] = useState([]);
-  const [q, setQ] = useState(null);
-
-  const getBestSellerItems = async () => {
-    // const { data: { item } } = await bestSellerApi();
-    await bestSellerApi().then(result => {
-      const { data: { item } } = result;
-      setItems(item);
-      console.log(items)
-    })
-  }
 
   useEffect(() => {
+    const getBestSellerItems = async () => {
+      const { data: { item } } = await bestSellerApi();
+      setItems(item);
+    }
     getBestSellerItems();
   }, []);
 
   return (
-    <div>123</div>
+    <>
+      {items && (
+        <HomePresenter
+          items={items}
+        />
+      )}
+    </>
   );
 }
 
