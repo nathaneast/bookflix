@@ -7,10 +7,8 @@ function HomeContainer() {
   const [items, setItems] = useState([]);
   const [detail, setDetail] = useState({});
 
-  const handleDetail = bookData => {
-    setDetail(bookData);
-  }
-
+  const resetDetail = () => setDetail({});
+  const handleDetail = bookData => setDetail(bookData);
   const hasDetail = () => Object.keys(detail).length;
 
   useEffect(() => {
@@ -26,9 +24,10 @@ function HomeContainer() {
       {items.length && (
         <HomePresenter
           items={items}
-          setDetail={handleDetail}
           detail={detail}
+          setDetail={handleDetail}
           hasDetail={hasDetail}
+          resetDetail={resetDetail}
         />
       )}
     </>

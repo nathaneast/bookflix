@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Poster({ title, author, image, price, priceSales, desc, date, publisher, categoryName, buyLink, setDetail }) {
+function Poster({ title, author, image, price, priceSales, desc, date, publisher, categoryName, buyLink, rating, setDetail }) {
 
   const handleDetail = () => {
     setDetail({
@@ -13,10 +13,10 @@ function Poster({ title, author, image, price, priceSales, desc, date, publisher
       date,
       publisher,
       categoryName,
-      buyLink
+      buyLink,
+      rating
     });
   }
-
 
   return (
     <div onClick={() => handleDetail()}>

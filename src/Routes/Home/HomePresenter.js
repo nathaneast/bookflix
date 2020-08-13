@@ -3,12 +3,13 @@ import React from 'react';
 import Board from '../../Components/Board';
 import Poster from '../../Components/Poster';
 
-function HomePresenter({ items, setDetail, detail, hasDetail }) {
+function HomePresenter({ items, detail, setDetail, hasDetail, resetDetail }) {
   return (
     <Board
       title={'BestSeller'}
       detail={detail}
       hasDetail={hasDetail}
+      resetDetail={resetDetail}
     >
       {items.map(item => (
         <Poster
@@ -23,6 +24,7 @@ function HomePresenter({ items, setDetail, detail, hasDetail }) {
           publisher={item.publisher}
           categoryName={item.categoryName}
           buyLink={item.additionalLink}
+          rating={item.mileageRate}
           setDetail={setDetail}
         />
       ))}
