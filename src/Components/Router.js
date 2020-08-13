@@ -19,15 +19,15 @@ export default () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link></li>
+              <Link to="/">베스트셀러</Link></li>
             <li>
-              <Link to="/newBook">newBook</Link>
+              <Link to="/newBook">신간도서</Link>
             </li>
             <li>
-              <Link to="/recommend">recommend</Link>
+              <Link to="/recommend">추천도서</Link>
             </li>
             <li>
-              <Link to="/search">search</Link>
+              <Link to="/search">도서검색</Link>
             </li>
           </ul>
         </nav>

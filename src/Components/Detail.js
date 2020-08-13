@@ -122,7 +122,7 @@ function Detail({ title, author, image, price, priceSales, desc, date, publisher
             <Title>{title}</Title>
             <CloseContainer>
               <CloseButton>
-                <Item>❌</Item>
+                <Item onClick={() => resetDetail()}>❌</Item>
               </CloseButton>
             </CloseContainer>
           </Header>
@@ -136,7 +136,7 @@ function Detail({ title, author, image, price, priceSales, desc, date, publisher
               <BookDetail>
                 <Item>저자: {author}</Item>
                 <Item>종류: {categoryName}</Item>
-                <Item>평점: {rating}</Item>
+                <Item>평점: {rating} / 10</Item>
                 <Item>출판사: {publisher}</Item>
                 <Item>출판일: {date}</Item>
               </BookDetail>

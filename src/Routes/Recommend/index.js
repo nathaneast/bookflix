@@ -1,7 +1,3 @@
-import React from 'react';
+import RecommendContainer from './RecommendContainer';
 
-export default () => {
-  return (
-    <div>Recommend</div>
-  );
-}
+export default RecommendContainer;

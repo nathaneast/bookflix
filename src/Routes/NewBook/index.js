@@ -1,7 +1,3 @@
-import React from 'react';
+import NewBookContainer from './NewBookContainer';
 
-export default () => {
-  return (
-    <div>new book</div>
-  );
-}
+export default NewBookContainer;

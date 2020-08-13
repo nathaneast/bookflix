@@ -1,7 +1,3 @@
-import React from 'react';
+import SearchContainer from './SearchContainer';
 
-export default () => {
-  return (
-    <div>Search</div>
-  );
-}
+export default SearchContainer;
