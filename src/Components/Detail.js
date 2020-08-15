@@ -26,6 +26,9 @@ const CloseButton = styled.div`
   cursor: pointer;
 `;
 
+const ImageContainer = styled.div`
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+`;
 const Image = styled.img`
   width: 250px;
   height: 350px;
@@ -135,9 +138,9 @@ function Detail({ title, author, image, price, priceSales, desc, date, publisher
           </Header>
 
           <Section>
-            <Article>
+            <ImageContainer>
               <Image src={image} alt={title}></Image>
-            </Article>
+            </ImageContainer>
 
             <Article>
               <BookDetail>

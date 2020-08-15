@@ -21,6 +21,7 @@ const Rating = styled.span`
 
 const ImageContainer = styled.div`
   position: relative;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   &:hover {
     ${Image} {
       opacity: 0.3;
@@ -39,7 +40,7 @@ const Item = styled.div`
 `;
 
 const Title = styled.span`
-  padding: 5px;
+  padding: 10px;
   font-weight: bolder;
 `;
 
