@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { searchApi } from '../../api';
 import SearchPresenter from './SearchPresenter';
@@ -7,10 +7,13 @@ function SearchContainer() {
   const [searchTerm, setSearchTerm] = useState('');
   const [items, setItems] = useState([]);
   const [detail, setDetail] = useState({});
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
+  const isItems = () => Boolean(items.length);
   const resetDetail = () => setDetail({});
   const handleDetail = bookData => setDetail(bookData);
-  const hasDetail = () => Object.keys(detail).length;
+  const isDetail = () => Boolean(Object.keys(detail).length);
   const updateTerm = e => setSearchTerm(e.target.value);
   const handleSubmit = e => {
     e.preventDefault();
@@ -19,17 +22,22 @@ function SearchContainer() {
     }
   };
   const searchByTerm = async () => {
-    const { data: { item } } = await searchApi(searchTerm);
-    setItems(item);
+    try {
+      setLoading(true);
+      const { data: { item } } = await searchApi(searchTerm);
+      setItems(item);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
   }
 
-  // useEffect(() => {
-    // const getSearchItems = async () => {
-    //   const { data: { item } } = await searchSellerApi();
-    //   setItems(item);
-    // }
-    // getSearchItems();
-  // }, [searchTerm]);
+  useEffect(() => {
+    if (searchTerm) {
+      searchByTerm();
+    } 
+  }, [searchTerm]);
 
   return (
     <>
@@ -37,11 +45,14 @@ function SearchContainer() {
         items={items}
         detail={detail}
         setDetail={handleDetail}
-        hasDetail={hasDetail}
+        isDetail={isDetail}
         resetDetail={resetDetail}
         searchTerm={searchTerm}
         updateTerm={updateTerm}
         handleSubmit={handleSubmit}
+        isItems={isItems}
+        loading={loading}
+        error={error}
       />}
     </>
   );

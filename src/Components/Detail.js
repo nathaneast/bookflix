@@ -26,6 +26,11 @@ const CloseButton = styled.div`
   cursor: pointer;
 `;
 
+const Image = styled.img`
+  width: 250px;
+  height: 350px;
+`;
+
 const BookDetail = styled.div`
   margin: 0px 20px;
   flex-direction: column;
@@ -122,14 +127,16 @@ function Detail({ title, author, image, price, priceSales, desc, date, publisher
             <Title>{title}</Title>
             <CloseContainer>
               <CloseButton>
-                <Item onClick={() => resetDetail()}>❌</Item>
+                <Item onClick={() => resetDetail()}>
+                  <span role='img' aria-label='cancel'>❌</span>
+                </Item>
               </CloseButton>
             </CloseContainer>
           </Header>
 
           <Section>
             <Article>
-              <img src={image} alt={title} width='300px'></img>
+              <Image src={image} alt={title}></Image>
             </Article>
 
             <Article>
@@ -145,13 +152,15 @@ function Detail({ title, author, image, price, priceSales, desc, date, publisher
               </Desc>
               <Wrapper>
                 <PriceDetail>
-                  <Item>💰</Item>
+                  <Item>
+                    <span role='img' aria-label='price'>💰</span>
+                  </Item>
                   <Price>{price}</Price>
                   <PriceSales>{priceSales}</PriceSales>
                 </PriceDetail>
                 <Wrapper>
                   <BuyButton>
-                  <BuyLink href={buyLink} target='_blank'>구매하기</BuyLink>
+                    <BuyLink href={buyLink} target='_blank'>구매하기</BuyLink>
                   </BuyButton>
                 </Wrapper>
               </Wrapper>

@@ -1,16 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Detail from './Detail';
 
-function Board({ title, children, detail, hasDetail, resetDetail }) {
-  return (
-    <section>
-      <span>{title}</span>
-      <div>{children}</div>
+const Section = styled.section`
+  display: grid;
+  grid-template-columns: repeat(6, 240px);
+  grid-gap: 40px 0px;
+`;
 
-      {hasDetail() && (
+function Board({ children, detail, isDetail, resetDetail }) {
+  return (
+    <Section>
+      {children}
+
+      {isDetail() && (
         <Detail
-          title={detail.title}
           author={detail.author}
           image={detail.image}
           price={detail.price}
@@ -24,7 +29,7 @@ function Board({ title, children, detail, hasDetail, resetDetail }) {
           resetDetail={resetDetail}
         />
       )}
-    </section>
+    </Section>
   );
 };
 

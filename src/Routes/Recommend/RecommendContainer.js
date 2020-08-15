@@ -6,28 +6,41 @@ import RecommendPresenter from './RecommendPresenter';
 function RecommendContainer() {
   const [items, setItems] = useState([]);
   const [detail, setDetail] = useState({});
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
+  const isItems = () => Boolean(items.length);
   const resetDetail = () => setDetail({});
   const handleDetail = bookData => setDetail(bookData);
-  const hasDetail = () => Object.keys(detail).length;
-
-  useEffect(() => {
-    const getRecommendItems = async () => {
+  const isDetail = () => Boolean(Object.keys(detail).length);
+  const getRecommendItems = async () => {
+    try {
+      setLoading(true);
       const { data: { item } } = await recommendApi();
       setItems(item);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
     }
+  }
+
+  useEffect(() => {
     getRecommendItems();
   }, []);
 
   return (
     <>
-      {items.length && (
+      {isItems() && (
         <RecommendPresenter
           items={items}
           detail={detail}
           setDetail={handleDetail}
-          hasDetail={hasDetail}
+          isDetail={isDetail}
           resetDetail={resetDetail}
+          isItems={isItems}
+          error={error}
+          loading={loading}
         />
       )}
     </>
