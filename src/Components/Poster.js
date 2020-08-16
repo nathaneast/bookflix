@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Image = styled.img`
@@ -80,5 +81,20 @@ function Poster({ title, author, image, price, priceSales, desc, date, publisher
     </Item>
   );
 };
+
+Poster.propTypes = {
+  title: PropTypes.string,
+  author: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.number,
+  priceSales: PropTypes.number,
+  desc: PropTypes.string,
+  date: PropTypes.string,
+  publisher: PropTypes.string,
+  categoryName: PropTypes.string,
+  buyLink: PropTypes.string,
+  rating: PropTypes.string,
+  setDetail: PropTypes.func
+}
 
 export default Poster;

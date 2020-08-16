@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Board from '../../Components/Board';
@@ -63,5 +64,19 @@ function SearchPresenter({ items, detail, setDetail, isDetail, resetDetail, sear
     </>
   );
 };
+
+SearchPresenter.propTypes = {
+  items: PropTypes.array.isRequired,
+  detail: PropTypes.object,
+  setDetail: PropTypes.func,
+  isDetail: PropTypes.func,
+  resetDetai: PropTypes.func,
+  searchTerm: PropTypes.string,
+  updateTerm: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  isItems: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
+}
 
 export default SearchPresenter;

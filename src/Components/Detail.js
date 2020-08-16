@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Header = styled.div`
@@ -115,7 +116,6 @@ const Content = styled.div`
 `;
 
 function Detail({ title, author, image, price, priceSales, desc, date, publisher, categoryName, buyLink, rating, resetDetail }) {
-
   const handleModal = e => {
     if (e.target === e.currentTarget) {
       resetDetail();
@@ -174,5 +174,20 @@ function Detail({ title, author, image, price, priceSales, desc, date, publisher
     </Modal>
   );
 };
+
+Detail.propTypes = {
+  title: PropTypes.string,
+  author: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.number,
+  priceSales: PropTypes.number,
+  desc: PropTypes.string,
+  date: PropTypes.string,
+  publisher: PropTypes.string,
+  categoryName: PropTypes.string,
+  buyLink: PropTypes.string,
+  rating: PropTypes.string,
+  setDetail: PropTypes.func
+}
 
 export default Detail;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Detail from './Detail';
@@ -32,5 +33,12 @@ function Board({ children, detail, isDetail, resetDetail }) {
     </Section>
   );
 };
+
+Board.propTypes = {
+  children: PropTypes.array.isRequired,
+  detail: PropTypes.object,
+  isDetail: PropTypes.func,
+  setDetail: PropTypes.func,
+}
 
 export default Board;

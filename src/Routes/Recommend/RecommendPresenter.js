@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Board from '../../Components/Board';
 import Poster from '../../Components/Poster';
@@ -40,5 +41,15 @@ function RecommendPresenter({ items, detail, setDetail, isDetail, resetDetail, e
     </>
   );
 };
+
+RecommendPresenter.propTypes = {
+  items: PropTypes.array.isRequired,
+  detail: PropTypes.object,
+  setDetail: PropTypes.func,
+  isDetail: PropTypes.func,
+  resetDetai: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
+}
 
 export default RecommendPresenter;
