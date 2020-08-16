@@ -13,6 +13,11 @@ function NewBookContainer() {
   const resetDetail = () => setDetail({});
   const handleDetail = bookData => setDetail(bookData);
   const isDetail = () => Boolean(Object.keys(detail).length);
+  const handleModal = e => {
+    if (e.target === e.currentTarget) {
+      resetDetail();
+    }
+  }
   const getNewBookItems = async () => {
     try {
       setLoading(true);
@@ -40,6 +45,7 @@ function NewBookContainer() {
           resetDetail={resetDetail}
           error={error}
           loading={loading}
+          handleModal={handleModal}
         />
       )}
     </>

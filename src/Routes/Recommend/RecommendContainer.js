@@ -13,6 +13,11 @@ function RecommendContainer() {
   const resetDetail = () => setDetail({});
   const handleDetail = bookData => setDetail(bookData);
   const isDetail = () => Boolean(Object.keys(detail).length);
+  const handleModal = e => {
+    if (e.target === e.currentTarget) {
+      resetDetail();
+    }
+  }
   const getRecommendItems = async () => {
     try {
       setLoading(true);
@@ -41,6 +46,7 @@ function RecommendContainer() {
           isItems={isItems}
           error={error}
           loading={loading}
+          handleModal={handleModal}
         />
       )}
     </>

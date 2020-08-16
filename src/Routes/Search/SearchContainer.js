@@ -14,6 +14,11 @@ function SearchContainer() {
   const resetDetail = () => setDetail({});
   const handleDetail = bookData => setDetail(bookData);
   const isDetail = () => Boolean(Object.keys(detail).length);
+  const handleModal = e => {
+    if (e.target === e.currentTarget) {
+      resetDetail();
+    }
+  }
   const updateTerm = e => setSearchTerm(e.target.value);
   const handleSubmit = e => {
     e.preventDefault();
@@ -53,6 +58,7 @@ function SearchContainer() {
         isItems={isItems}
         loading={loading}
         error={error}
+        handleModal={handleModal}
       />}
     </>
   );

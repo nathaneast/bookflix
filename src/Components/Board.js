@@ -10,7 +10,7 @@ const Section = styled.section`
   grid-gap: 40px 0px;
 `;
 
-function Board({ children, detail, isDetail, resetDetail }) {
+function Board({ children, detail, isDetail, resetDetail, handleModal }) {
   return (
     <Section>
       {children}
@@ -28,6 +28,7 @@ function Board({ children, detail, isDetail, resetDetail }) {
           buyLink={detail.buyLink}
           rating={detail.rating}
           resetDetail={resetDetail}
+          handleModal={handleModal}
         />
       )}
     </Section>
@@ -39,6 +40,7 @@ Board.propTypes = {
   detail: PropTypes.object,
   isDetail: PropTypes.func,
   setDetail: PropTypes.func,
+  handleModal: PropTypes.func,
 }
 
 export default Board;

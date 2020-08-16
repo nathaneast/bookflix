@@ -115,13 +115,8 @@ const Content = styled.div`
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 `;
 
-function Detail({ title, author, image, price, priceSales, desc, date, publisher, categoryName, buyLink, rating, resetDetail }) {
-  const handleModal = e => {
-    if (e.target === e.currentTarget) {
-      resetDetail();
-    }
-  }
-
+function Detail({ title, author, image, price, priceSales, desc, date, publisher, categoryName, buyLink, rating, resetDetail, handleModal }) {
+  
   return (
     <Modal>
       <Overlay onClick={e => handleModal(e)}>
@@ -187,7 +182,8 @@ Detail.propTypes = {
   categoryName: PropTypes.string,
   buyLink: PropTypes.string,
   rating: PropTypes.string,
-  setDetail: PropTypes.func
+  setDetail: PropTypes.func,
+  handleModal: PropTypes.func
 }
 
 export default Detail;

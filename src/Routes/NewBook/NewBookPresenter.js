@@ -6,7 +6,7 @@ import Poster from '../../Components/Poster';
 import Loader from '../../Components/Loader';
 import Message from '../../Components/Message';
 
-function newBookPresenter({ items, detail, setDetail, isDetail, resetDetail, error, loading }) {
+function newBookPresenter({ items, detail, setDetail, isDetail, resetDetail, error, loading, handleModal }) {
   return (
     <>
       {loading ? (
@@ -16,6 +16,7 @@ function newBookPresenter({ items, detail, setDetail, isDetail, resetDetail, err
             detail={detail}
             isDetail={isDetail}
             resetDetail={resetDetail}
+            handleModal={handleModal}
           >
             {items.map(item => (
               <Poster
@@ -50,6 +51,7 @@ newBookPresenter.propTypes = {
   resetDetai: PropTypes.func,
   error: PropTypes.string,
   loading: PropTypes.bool,
+  handleModal: PropTypes.func,
 }
 
 export default newBookPresenter;

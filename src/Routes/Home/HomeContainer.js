@@ -13,6 +13,11 @@ function HomeContainer() {
   const resetDetail = () => setDetail({});
   const handleDetail = bookData => setDetail(bookData);
   const isDetail = () => Boolean(Object.keys(detail).length);
+  const handleModal = e => {
+    if (e.target === e.currentTarget) {
+      resetDetail();
+    }
+  }
   const getBestSellerItems = async () => {
     try {
       setLoading(true);
@@ -24,7 +29,7 @@ function HomeContainer() {
       setLoading(false);
     }
   }
-
+ 
   useEffect(() => {
     getBestSellerItems();
   }, []);
@@ -40,6 +45,7 @@ function HomeContainer() {
           resetDetail={resetDetail}
           error={error}
           loading={loading}
+          handleModal={handleModal}
         />
       )}
     </>
