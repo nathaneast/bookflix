@@ -4,6 +4,7 @@
   status = 200
   force = false
   query = {path = ":path"}
+  signed = "ae1ee189-82b8-44c0-b5d4-8e5108c3c731"
 
 [[redirects]]
   from = "/newBook"
@@ -11,6 +12,7 @@
   status = 200
   force = false
   query = {path = ":path"}
+  signed = "ae1ee189-82b8-44c0-b5d4-8e5108c3c731"
 
 [[redirects]]
   from = "/recommend"
@@ -18,6 +20,7 @@
   status = 200
   force = false
   query = {path = ":path"}
+  signed = "ae1ee189-82b8-44c0-b5d4-8e5108c3c731"
 
 [[redirects]]
   from = "/search"
@@ -25,9 +28,10 @@
   status = 200
   force = false
   query = {path = ":path"}
+  signed = "ae1ee189-82b8-44c0-b5d4-8e5108c3c731"
 
-  {
-  "netlify_id": "ae1ee189-82b8-44c0-b5d4-8e5108c3c731",
+{
+  "netlify_id": "lucid-lichterman-b7efc1",
   "site_url": "https://lucid-lichterman-b7efc1.netlify.app/",
   "context": "the deploy context for this request"
 }
