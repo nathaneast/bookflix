@@ -1,0 +1,27 @@
+[[redirects]]
+  from = "/"
+  to = "http://book.interpark.com"
+  status = 200
+  force = false
+  query = {path = ":path"}
+
+[[redirects]]
+  from = "/newBook"
+  to = "http://book.interpark.com"
+  status = 200
+  force = false
+  query = {path = ":path"}
+
+[[redirects]]
+  from = "/recommend"
+  to = "http://book.interpark.com"
+  status = 200
+  force = false
+  query = {path = ":path"}
+
+[[redirects]]
+  from = "/search"
+  to = "http://book.interpark.com"
+  status = 200
+  force = false
+  query = {path = ":path"}
