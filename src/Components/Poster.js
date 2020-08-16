@@ -42,6 +42,11 @@ const Item = styled.div`
 const Title = styled.span`
   padding: 10px;
   font-weight: bolder;
+  text-align: center;
+`;
+
+const Author = styled.span`
+  text-align: center;
 `;
 
 function Poster({ title, author, image, price, priceSales, desc, date, publisher, categoryName, buyLink, rating, setDetail }) {
@@ -71,7 +76,7 @@ function Poster({ title, author, image, price, priceSales, desc, date, publisher
         </Rating>
       </ImageContainer>
       <Title>{title}</Title>
-      <span>{author}</span>
+      <Author>{author}</Author>
     </Item>
   );
 };
