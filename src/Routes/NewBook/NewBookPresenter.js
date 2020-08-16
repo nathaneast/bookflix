@@ -6,7 +6,7 @@ import Poster from '../../Components/Poster';
 import Loader from '../../Components/Loader';
 import Message from '../../Components/Message';
 
-function newBookPresenter({ items, detail, setDetail, isDetail, resetDetail, error, loading, handleModal }) {
+function newBookPresenter({ items, detail, error, loading, isDetail, setDetail, resetDetail, handleModal }) {
   return (
     <>
       {loading ? (
@@ -46,11 +46,11 @@ function newBookPresenter({ items, detail, setDetail, isDetail, resetDetail, err
 newBookPresenter.propTypes = {
   items: PropTypes.array.isRequired,
   detail: PropTypes.object,
-  setDetail: PropTypes.func,
-  isDetail: PropTypes.func,
-  resetDetai: PropTypes.func,
   error: PropTypes.string,
   loading: PropTypes.bool,
+  isDetail: PropTypes.func,
+  setDetail: PropTypes.func,
+  resetDetai: PropTypes.func,
   handleModal: PropTypes.func,
 }
 

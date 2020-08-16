@@ -19,7 +19,7 @@ const Input = styled.input`
   margin-left: 10px;
 `;
 
-function SearchPresenter({ items, detail, setDetail, isDetail, resetDetail, searchTerm, updateTerm, handleSubmit, isItems, loading, error, handleModal }) {
+function SearchPresenter({ items, detail, searchTerm, loading, error, isItems, isDetail, setDetail, resetDetail, updateTerm, handleSubmit, handleModal }) {
   return (
     <>
       <Form onSubmit={handleSubmit}>
@@ -69,15 +69,15 @@ function SearchPresenter({ items, detail, setDetail, isDetail, resetDetail, sear
 SearchPresenter.propTypes = {
   items: PropTypes.array.isRequired,
   detail: PropTypes.object,
-  setDetail: PropTypes.func,
-  isDetail: PropTypes.func,
-  resetDetai: PropTypes.func,
   searchTerm: PropTypes.string,
+  loading: PropTypes.bool,
+  error: PropTypes.string,
+  isItems: PropTypes.func,
+  isDetail: PropTypes.func,
+  setDetail: PropTypes.func,
+  resetDetai: PropTypes.func,
   updateTerm: PropTypes.func,
   handleSubmit: PropTypes.func,
-  isItems: PropTypes.func,
-  error: PropTypes.string,
-  loading: PropTypes.bool,
   handleModal: PropTypes.func,
 }
 

@@ -15,14 +15,14 @@ import Search from '../Routes/Search'
 export default () => {
   return (
     <Router>
-        <Header />
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/newBook' component={NewBook} />
-          <Route path='/recommend' component={Recommend} />
-          <Route path='/search' component={Search} />
-          <Redirect from='*' to='/' />
-        </Switch>
+      <Header />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/newBook' component={NewBook} />
+        <Route path='/recommend' component={Recommend} />
+        <Route path='/search' component={Search} />
+        <Redirect from='*' to='/' />
+      </Switch>
     </Router>
   );
 };

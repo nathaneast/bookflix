@@ -33,7 +33,7 @@ const SLink = styled(Link)`
   color: ${props => (props.current === 'true' ? '#6c5ce7' : '#2c3e50')};
 `;
 
-export default withRouter(({ location: {pathname} }) => (
+export default withRouter(({ location: { pathname } }) => (
   <Header>
     <div>
       <Title href='/'>BOOKFLIX</Title>

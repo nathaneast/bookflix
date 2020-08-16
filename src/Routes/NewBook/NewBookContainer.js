@@ -10,9 +10,9 @@ function NewBookContainer() {
   const [loading, setLoading] = useState(false);
 
   const isItems = () => Boolean(items.length);
+  const isDetail = () => Boolean(Object.keys(detail).length);
   const resetDetail = () => setDetail({});
   const handleDetail = bookData => setDetail(bookData);
-  const isDetail = () => Boolean(Object.keys(detail).length);
   const handleModal = e => {
     if (e.target === e.currentTarget) {
       resetDetail();
@@ -40,11 +40,11 @@ function NewBookContainer() {
         <NewBookPresenter
           items={items}
           detail={detail}
-          setDetail={handleDetail}
-          isDetail={isDetail}
-          resetDetail={resetDetail}
           error={error}
           loading={loading}
+          isDetail={isDetail}
+          resetDetail={resetDetail}
+          setDetail={handleDetail}
           handleModal={handleModal}
         />
       )}

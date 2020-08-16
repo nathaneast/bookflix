@@ -11,8 +11,8 @@ function HomeContainer() {
 
   const isItems = () => Boolean(items.length);
   const resetDetail = () => setDetail({});
-  const handleDetail = bookData => setDetail(bookData);
   const isDetail = () => Boolean(Object.keys(detail).length);
+  const handleDetail = bookData => setDetail(bookData);
   const handleModal = e => {
     if (e.target === e.currentTarget) {
       resetDetail();
@@ -29,7 +29,7 @@ function HomeContainer() {
       setLoading(false);
     }
   }
- 
+
   useEffect(() => {
     getBestSellerItems();
   }, []);
@@ -40,11 +40,11 @@ function HomeContainer() {
         <HomePresenter
           items={items}
           detail={detail}
-          setDetail={handleDetail}
-          isDetail={isDetail}
-          resetDetail={resetDetail}
           error={error}
           loading={loading}
+          isDetail={isDetail}
+          setDetail={handleDetail}
+          resetDetail={resetDetail}
           handleModal={handleModal}
         />
       )}
