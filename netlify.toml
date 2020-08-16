@@ -25,3 +25,9 @@
   status = 200
   force = false
   query = {path = ":path"}
+
+  {
+  "netlify_id": "ae1ee189-82b8-44c0-b5d4-8e5108c3c731",
+  "site_url": "https://lucid-lichterman-b7efc1.netlify.app/",
+  "context": "the deploy context for this request"
+}
