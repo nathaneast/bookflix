@@ -1,26 +1,26 @@
 [[redirects]]
-  from = "/"
+  from = "/https://lucid-lichterman-b7efc1.netlify.app"
   to = "http://book.interpark.com"
   status = 200
   force = false
   query = {path = ":path"}
 
 [[redirects]]
-  from = "/newBook"
+  from = "https://lucid-lichterman-b7efc1.netlify.app/newBook"
   to = "http://book.interpark.com"
   status = 200
   force = false
   query = {path = ":path"}
 
 [[redirects]]
-  from = "/recommend"
+  from = "https://lucid-lichterman-b7efc1.netlify.app/recommend"
   to = "http://book.interpark.com"
   status = 200
   force = false
   query = {path = ":path"}
 
 [[redirects]]
-  from = "/search"
+  from = "https://lucid-lichterman-b7efc1.netlify.app/search"
   to = "http://book.interpark.com"
   status = 200
   force = false
